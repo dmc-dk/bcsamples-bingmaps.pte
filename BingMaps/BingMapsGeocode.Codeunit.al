@@ -14,7 +14,7 @@ codeunit 74120 "BingMaps Geocode"
     [EventSubscriber(ObjectType::Table, Database::Customer, 'OnAfterModifyEvent', '', true, true)]
     local procedure ModifyCustomer(VAR Rec: Record Customer)
     begin
-        //DMC Comment
+        //DMC Comment - new
         GeocodeCustomer(Rec);
     end;
 
