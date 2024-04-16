@@ -14,6 +14,7 @@ codeunit 74120 "BingMaps Geocode"
     [EventSubscriber(ObjectType::Table, Database::Customer, 'OnAfterModifyEvent', '', true, true)]
     local procedure ModifyCustomer(VAR Rec: Record Customer)
     begin
+        //DMC Comment
         GeocodeCustomer(Rec);
     end;
 
@@ -35,6 +36,10 @@ codeunit 74120 "BingMaps Geocode"
             BingMapsCustomer.Rename(Rec."No.");
     end;
 
+    /// <summary>
+    /// Geocode a customer
+    /// </summary>
+    /// <param name="Customer">Customer record</param>
     procedure GeocodeCustomer(Customer: Record Customer)
     var
         BingMapsCustomer: Record "BingMaps Customer";
